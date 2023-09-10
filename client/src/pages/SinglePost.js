@@ -8,11 +8,11 @@ const SinglePost = () => {
     const { userInfo } = useContext(UserContext);
 
     const { id } = useParams();;
-    console.log(id);
     const [postInfo, setPostInfo] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/post/${id}`).then((resp) => {
+        fetch(`http://localhost:4000/post/${id}`)
+        .then((resp) => {
             resp.json().then((info) => {
                 setPostInfo(info);
             })

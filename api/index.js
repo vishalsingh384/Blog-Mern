@@ -37,10 +37,8 @@ app.post('/register', async (req, res) => {
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-    console.log(username);
     try {
         const UserDoc = await User.findOne({ username });
-        console.log(UserDoc);
         if (UserDoc) {
             const passOk = bcrypt.compareSync(password, UserDoc.password);
             if (passOk) {
@@ -155,9 +153,6 @@ app.get('/post/:id', async (req, res) => {
     const resp = await Post.findOne({ _id: req.params.id }).populate('author', ['username']);
     res.json(resp);
 })
-
-
-
 
 
 
