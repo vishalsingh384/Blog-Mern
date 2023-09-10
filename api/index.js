@@ -111,6 +111,11 @@ app.get('/post', async (req, res) => {
     res.json(resp);
 })
 
+app.get('/post/:id',async(req,res)=>{
+    const resp=await Post.findOne({_id:req.params.id}).populate('author',['username']);
+    res.json(resp);
+})
+
 
 
 app.listen(4000);
