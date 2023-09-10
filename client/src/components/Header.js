@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../UserContext'
 
 const Header = () => {
 
-    // const [username, setUsername] = useState(null);
     const {userInfo, setUserInfo}=useContext(UserContext);
-
+    const navigate=useNavigate();
     useEffect(() => {
         fetch('http://localhost:4000/profile', {
             credentials: 'include',
@@ -26,13 +25,14 @@ const Header = () => {
         })
 
         setUserInfo(null);
+        navigate('/login');
     }
 
     const username=userInfo?.username;
 
     return (
         <header>
-            <Link to='/' className="logo">MyBlog</Link>
+            <Link to='/' className="logo">BLOGS</Link>
             <nav>
                 {username != null ?
                     (

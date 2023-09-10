@@ -4,7 +4,7 @@ import App from "./App";
 const UserContext=createContext({});
 
 const UserContextProvider=()=>{
-    const [userInfo, setUserInfo]=useState({});
+    const [userInfo, setUserInfo]=useState();
 
     return <UserContext.Provider value={{userInfo, setUserInfo}}>
         <App/>

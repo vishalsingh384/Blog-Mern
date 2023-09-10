@@ -8,18 +8,20 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import CreatePage from './pages/CreatePage';
 import SinglePost from './pages/SinglePost';
+import EditPost from './pages/EditPost';
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
-        <Route index element={<IndexPage/>} />
-        <Route path='/login' element={<LoginPage/>} />
+        <Route index element={<IndexPage />} />
+        <Route path='/login' element={<LoginPage />} />
         <Route path='/register' element={
-          <RegisterPage/>
+          <RegisterPage />
         } />
-        <Route path='/create' element={<CreatePage/>}/>
-      <Route path='/post/:id' element={<SinglePost/>}/>
+        <Route path='/create' element={<CreatePage />} />
+        <Route path='/post/:id' element={<SinglePost />} />
+        <Route path='/edit/:id' element={<EditPost />} />
       </Route>
     </Routes>
   );
