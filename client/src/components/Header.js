@@ -7,7 +7,7 @@ const Header = () => {
     const {userInfo, setUserInfo}=useContext(UserContext);
     const navigate=useNavigate();
     useEffect(() => {
-        fetch('http://localhost:4000/profile', {
+        fetch('https://my-blog-backend-08uh.onrender.com/profile', {
             credentials: 'include',
         }).then((resp) => {
             resp.json().then((info) => {
@@ -19,7 +19,7 @@ const Header = () => {
     }, [])
 
     const logout=()=>{
-        fetch('http://localhost:4000/logout',{
+        fetch('https://my-blog-backend-08uh.onrender.com/logout',{
             credentials:'include',
             method:'POST'
         })

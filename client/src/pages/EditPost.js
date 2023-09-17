@@ -13,7 +13,7 @@ const EditPost = () => {
     const navigate=useNavigate();
 
     useEffect(()=>{
-        fetch('http://localhost:4000/post/'+id).then(resp=>resp.json().then(info=>{
+        fetch('https://my-blog-backend-08uh.onrender.com/post/'+id).then(resp=>resp.json().then(info=>{
             setTitle(info.title);
             setSummary(info.summary);
             setContent(info.content);
@@ -29,7 +29,7 @@ const EditPost = () => {
         data.set('file',files?.[0]);
         data.set('id',id);
 
-        await fetch('http://localhost:4000/post',{
+        await fetch('https://my-blog-backend-08uh.onrender.com/post',{
             method:'PUT',
             body:data,
             credentials:'include'

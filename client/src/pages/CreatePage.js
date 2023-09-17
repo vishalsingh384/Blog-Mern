@@ -19,7 +19,7 @@ const CreatePage = () => {
         data.set('file',files?.[0]);
 
         e.preventDefault();
-        const resp=await fetch('http://localhost:4000/post',{
+        const resp=await fetch('https://my-blog-backend-08uh.onrender.com/post',{
             method:'POST',
             body:data,
             credentials:'include',

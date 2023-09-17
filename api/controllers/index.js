@@ -50,11 +50,15 @@ exports.loginUser=async (req, res) => {
 };
 
 exports.profile=(req, res) => {
-    const { token } = req.cookies;
-    jwt.verify(token, secretKey, {}, (err, info) => {
-        if (err) throw err;
-        res.json(info);
-    })
+    try{
+        const { token } = req.cookies;
+        jwt.verify(token, secretKey, {}, (err, info) => {
+            if (err) throw err;
+            res.json(info);
+        })
+    }catch(err){
+        res.json(err.message);
+    }
 };
 
 exports.logoutUser=(req, res) => {

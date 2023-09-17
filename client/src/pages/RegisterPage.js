@@ -8,7 +8,7 @@ const RegisterPage = () => {
     const register=async(e)=>{
         e.preventDefault();
 
-        const resp=await fetch('http://localhost:4000/register',{
+        const resp=await fetch('https://my-blog-backend-08uh.onrender.com/register',{
             method:'POST',
             body:JSON.stringify({username,password}),
             headers:{'Content-Type':'application/json'}
