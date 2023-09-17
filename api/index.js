@@ -8,7 +8,7 @@ const  router  = require('./routes/Route');
 
 
 
-app.use(cors({ credentials: true, origin: 'https://my-blog-backend-08uh.onrender.com' }));
+app.use(cors({ credentials: true, origin: 'https://650720885ed2ae4e5d28cc9b--magical-tarsier-517b14.netlify.app' }));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
