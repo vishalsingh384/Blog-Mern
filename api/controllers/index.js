@@ -127,12 +127,16 @@ exports.updatePost= async (req, res) => {
 
 
 exports.getPosts=async (req, res) => {
-    const resp = await Post.find()
+    try{
+        const resp = await Post.find()
         .populate('author', ['username'])
         .sort({ createdAt: -1 })
         .limit(20);
-
-    res.json(resp);
+        
+        res.json(resp);
+    }catch(err){
+        res.json(err.message);
+    }
 };
 
 exports.getPostById=async (req, res) => {
